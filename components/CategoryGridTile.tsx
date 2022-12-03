@@ -5,11 +5,6 @@ export interface CategoryGridTileProps {
   color?: string;
 }
 
-CategoryGridTile.defaultProps = {
-  title: 'My good habit',
-  color: 'black',
-};
-
 function CategoryGridTile(props: CategoryGridTileProps) {
   const { title, color } = props;
   return (
