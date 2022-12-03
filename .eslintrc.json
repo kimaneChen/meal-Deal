@@ -41,7 +41,7 @@
       "error",
       {
         "singleQuote": true,
-        "trailingComma": "all",
+        "trailingComma": "es5",
         "arrowParens": "always",
         "endOfLine": "auto",
         "tabWidth": 2,
