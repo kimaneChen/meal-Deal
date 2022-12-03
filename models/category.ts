@@ -1,5 +1,5 @@
 class Category {
-  id;
+  id: string;
   title: string;
   color: string;
   constructor(id: string, title:string, color:string) {

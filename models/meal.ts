@@ -1,5 +1,5 @@
 class Meal {
-  id: string 
+  id: string;
   categoryIds: string[];
   title: string;
   imageUrl: string;
