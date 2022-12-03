@@ -1,5 +1,5 @@
 class Meal {
-  id: string
+  id: string 
   categoryIds: string[];
   title: string;
   imageUrl: string;
@@ -9,7 +9,7 @@ class Meal {
   complexity: string;
   affordability: string;
   isGlutenFree: boolean;
-  isVegan: boolean;
+  isVegan: boolean ;
   isVegetarian: boolean;
   isLactoseFree: boolean;
   constructor(
