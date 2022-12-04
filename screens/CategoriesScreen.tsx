@@ -4,8 +4,9 @@ import { CATEGORIES } from '../data/dummy-data';
 import CategoryGridTile, {
   CategoryGridTileProps,
 } from '../components/CategoryGridTile';
+import type { CategoriesScreenProps } from '../types';
 
-function CategoriesScreen({ navigation }) {
+function CategoriesScreen({ navigation }: CategoriesScreenProps) {
   function renderCategoryItem(item: CategoryGridTileProps) {
     function pressHandler() {
       navigation.navigate('MealsOverview');
