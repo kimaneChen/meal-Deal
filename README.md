@@ -17,3 +17,5 @@ npm i --save-dev @typescript-eslint/parser @typescript-eslint/eslint-plugin
 npm i --save-dev prettier eslint-config-prettier eslint-plugin-prettier
 
 "react/no-array-index-key":"off", This need one unique id defined for object, otherwise, the index is the most unique in the development. -->
+
+<!-- The shadow only takes effect when the background is set in ios -->

@@ -5,11 +5,20 @@ import CategoryGridTile, {
   CategoryGridTileProps,
 } from '../components/CategoryGridTile';
 
-function renderCategoryItem(item: CategoryGridTileProps) {
-  return <CategoryGridTile title={item.title} color={item.color} />;
-}
+function CategoriesScreen({ navigation }) {
+  function renderCategoryItem(item: CategoryGridTileProps) {
+    function pressHandler() {
+      navigation.navigate('MealsOverview');
+    }
+    return (
+      <CategoryGridTile
+        title={item.title}
+        color={item.color}
+        onPress={pressHandler}
+      />
+    );
+  }
 
-function CategoriesScreen() {
   return (
     <View style={styles.container}>
       <FlatList
