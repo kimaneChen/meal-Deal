@@ -12,7 +12,23 @@ function MealsOverview({ route }: MealsOverviewProps) {
   });
 
   function renderMealItem(item: MealItemProps) {
-    return <MealItem title={item.title} />;
+    const { title, imageUrl, duration, complexity, affordability } = item;
+    // const mealItemProps = {
+    //   title,
+    //   imageUrl,
+    //   duration,
+    //   complexity,
+    //   affordability,
+    // };
+    return (
+      <MealItem
+        title={title}
+        imageUrl={imageUrl}
+        duration={duration}
+        complexity={complexity}
+        affordability={affordability}
+      />
+    );
   }
 
   return (
