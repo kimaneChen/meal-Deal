@@ -1,21 +1,34 @@
 class Meal {
   id: string;
+
   categoryIds: string[];
+
   title: string;
+
   imageUrl: string;
+
   ingredients: string[];
+
   steps: string[];
+
   duration: number;
+
   complexity: string;
+
   affordability: string;
+
   isGlutenFree: boolean;
-  isVegan: boolean ;
+
+  isVegan: boolean;
+
   isVegetarian: boolean;
+
   isLactoseFree: boolean;
+
   constructor(
     id: string,
     categoryIds: string[],
-    title:string,
+    title: string,
     affordability: string,
     complexity: string,
     imageUrl: string,
@@ -25,7 +38,7 @@ class Meal {
     isGlutenFree: boolean,
     isVegan: boolean,
     isVegetarian: boolean,
-    isLactoseFree: boolean,
+    isLactoseFree: boolean
   ) {
     this.id = id;
     this.categoryIds = categoryIds;
