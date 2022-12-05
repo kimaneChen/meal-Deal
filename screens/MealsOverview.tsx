@@ -1,6 +1,8 @@
 import { View, Text, StyleSheet } from 'react-native';
 
-function MealsOverview() {
+import { MealsOverviewProps } from '../types';
+
+function MealsOverview({ route }: MealsOverviewProps) {
   return (
     <View style={styles.container}>
       <Text>This is Meal Overview!</Text>

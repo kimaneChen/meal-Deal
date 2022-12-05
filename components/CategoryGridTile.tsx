@@ -3,13 +3,14 @@ import { Pressable, View, Text, StyleSheet, Platform } from 'react-native';
 export interface CategoryGridTileProps {
   title: string;
   color: string;
+  id: string;
   onPress?: () => void;
 }
 
 function CategoryGridTile(props: CategoryGridTileProps) {
-  const { title, color, onPress } = props;
+  const { title, color, id, onPress } = props;
   return (
-    <View style={styles.itemContainer}>
+    <View style={styles.itemContainer} key={id}>
       <Pressable
         style={({ pressed }) =>
           pressed ? styles.buttonPressed : styles.button

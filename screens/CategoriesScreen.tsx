@@ -9,10 +9,13 @@ import type { CategoriesScreenProps } from '../types';
 function CategoriesScreen({ navigation }: CategoriesScreenProps) {
   function renderCategoryItem(item: CategoryGridTileProps) {
     function pressHandler() {
-      navigation.navigate('MealsOverview');
+      navigation.navigate('MealsOverview', {
+        categoryId: item.id,
+      });
     }
     return (
       <CategoryGridTile
+        id={item.id}
         title={item.title}
         color={item.color}
         onPress={pressHandler}
