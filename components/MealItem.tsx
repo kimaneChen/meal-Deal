@@ -6,13 +6,20 @@ import {
   StyleSheet,
   Platform,
 } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 import Meal from '../models/meal';
 
 export type MealItemProps = Partial<Meal>;
 
 function MealItem(props: MealItemProps) {
-  const { title, imageUrl, duration, affordability, complexity } = props;
+  const { title, imageUrl, duration, affordability, complexity, id } = props;
+  const navigation = useNavigation();
+
+  function onPressHandler() {
+    navigation.navigate('MealDetails', { mealID: id });
+  }
+
   return (
     <View style={styles.container}>
       <Pressable
@@ -20,6 +27,7 @@ function MealItem(props: MealItemProps) {
         style={({ pressed }) =>
           pressed ? styles.pressedButton : styles.button
         }
+        onPress={onPressHandler}
       >
         <View style={styles.innerContainer}>
           <View>
