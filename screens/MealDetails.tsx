@@ -12,6 +12,7 @@ import { MealDetailsProps } from '../types';
 import { MEALS } from '../data/dummy-data';
 import MealFeatures from '../components/MealFeatures';
 import List from '../components/List';
+import IconButton from '../components/IconButton';
 
 function MealDetails({ route, navigation }: MealDetailsProps) {
   const mealId = route.params.mealID;
@@ -25,7 +26,14 @@ function MealDetails({ route, navigation }: MealDetailsProps) {
   useLayoutEffect(() => {
     navigation.setOptions({
       headerRight: () => {
-        return <Button title="like it" onPress={headerButtonPressHandler} />;
+        return (
+          <IconButton
+            onPress={headerButtonPressHandler}
+            icon="heart-outline"
+            size={24}
+            color="white"
+          />
+        );
       },
     });
   }, [navigation, headerButtonPressHandler]);
