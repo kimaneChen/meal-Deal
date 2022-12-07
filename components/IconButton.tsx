@@ -2,7 +2,7 @@ import { View, Pressable, StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
 export interface IconButtonProps {
-  icon?: typeof Ionicons.name;
+  icon?: React.ComponentProps<typeof Ionicons>['name'];
   size?: number;
   onPress?: () => void;
   color?: string;
