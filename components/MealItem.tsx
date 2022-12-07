@@ -9,6 +9,8 @@ import {
 import { useNavigation } from '@react-navigation/native';
 
 import Meal from '../models/meal';
+import { MealDetailsProps } from '../types';
+import MealFeatures from './MealFeatures';
 
 export type MealItemProps = Partial<Meal>;
 
@@ -17,7 +19,12 @@ function MealItem(props: MealItemProps) {
   const navigation = useNavigation();
 
   function onPressHandler() {
-    navigation.navigate('MealDetails', { mealID: id });
+    navigation.navigate(
+      'MealDetails' as never,
+      {
+        mealID: id,
+      } as never
+    );
   }
 
   return (
@@ -34,11 +41,11 @@ function MealItem(props: MealItemProps) {
             <Image source={{ uri: imageUrl }} style={styles.image} />
             <Text style={styles.title}>{title}</Text>
           </View>
-          <View style={styles.features}>
-            <Text style={styles.feature}>{`${duration}m`}</Text>
-            <Text style={styles.feature}> {affordability?.toUpperCase()} </Text>
-            <Text style={styles.feature}> {complexity?.toUpperCase()}</Text>
-          </View>
+          <MealFeatures
+            duration={duration?.toString()}
+            affordability={affordability}
+            complexity={complexity}
+          />
         </View>
       </Pressable>
     </View>
@@ -80,14 +87,5 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontWeight: 'bold',
     fontSize: 18,
-  },
-  features: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    margin: 4,
-  },
-  feature: {
-    fontSize: 12,
-    marginHorizontal: 4,
   },
 });

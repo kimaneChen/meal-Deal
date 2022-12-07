@@ -38,6 +38,7 @@
         "extensions": [".ts", ".tsx"]
       }
     ],
+
     "prettier/prettier": [
       "error",
       {
@@ -54,6 +55,12 @@
     "import/extensions": ["error", "never"],
     "react/prop-types": 0,
     "no-shadow": "off",
-    "@typescript-eslint/no-shadow": ["error"]
+    "@typescript-eslint/no-shadow": ["error"],
+    "react/no-unstable-nested-components": [
+      "warn",
+      {
+        "allowAsProps": true
+      }
+    ]
   }
 }
