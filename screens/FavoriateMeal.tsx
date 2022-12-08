@@ -1,8 +1,6 @@
 import { Text } from 'react-native';
 
-import { FavoriteMealProps } from '../types';
-
-function FavoritesScreen({ route }: FavoriteMealProps) {
+function FavoritesScreen() {
   return <Text> Test</Text>;
 }
 
