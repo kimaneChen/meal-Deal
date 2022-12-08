@@ -2,13 +2,13 @@ import { createContext, ReactNode, useState, useMemo } from 'react';
 
 interface FavoriteContextInterface {
   ids: string[];
-  addFavorite?: (id: string) => void | undefined;
-  removeFavorite?: (id: string) => void;
+  addFavorite: (id: string) => void;
+  removeFavorite: (id: string) => void;
 }
 
-export const FavoritesContext = createContext<FavoriteContextInterface>({
-  ids: [],
-});
+export const FavoritesContext = createContext<FavoriteContextInterface | null>(
+  null
+);
 
 export interface FavoritesContextProviderProps {
   children: ReactNode;
