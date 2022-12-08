@@ -3,7 +3,7 @@ import { View, FlatList, StyleSheet } from 'react-native';
 import MealItem, { MealItemProps } from './MealItem';
 
 export interface MealListProps {
-  listItems: MealItemProps[];
+  listItems: any[];
 }
 
 function MealList({ listItems }: MealListProps) {

@@ -1,12 +1,5 @@
 import { useLayoutEffect, useCallback, useContext } from 'react';
-import {
-  Text,
-  Image,
-  View,
-  StyleSheet,
-  ScrollView,
-  Button,
-} from 'react-native';
+import { Text, Image, View, StyleSheet, ScrollView } from 'react-native';
 
 import { MealDetailsProps } from '../types';
 import { MEALS } from '../data/dummy-data';
