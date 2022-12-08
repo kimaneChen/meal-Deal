@@ -20,13 +20,13 @@ function MealDetails({ route, navigation }: MealDetailsProps) {
   const mealFavoriteCtx = useContext(FavoritesContext);
 
   const displayedMeal = MEALS.find((meal) => meal.id === mealId);
-  const isMealFavorite = mealFavoriteCtx.ids.find((id) => id === mealId);
+  const isMealFavorite = mealFavoriteCtx?.ids.find((id) => id === mealId);
 
   const headerButtonPressHandler = useCallback(() => {
     if (isMealFavorite) {
-      mealFavoriteCtx.removeFavorite(mealId);
+      mealFavoriteCtx?.removeFavorite(mealId);
     } else {
-      mealFavoriteCtx.addFavorite(mealId);
+      mealFavoriteCtx?.addFavorite(mealId);
     }
   }, [isMealFavorite, mealFavoriteCtx, mealId]);
 

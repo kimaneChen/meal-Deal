@@ -8,9 +8,8 @@ import {
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-import Meal from '../models/meal';
-import { MealDetailsProps } from '../types';
-import MealFeatures from './MealFeatures';
+import Meal from '../../models/meal';
+import MealFeatures from '../MealFeatures';
 
 export type MealItemProps = Partial<Meal>;
 
