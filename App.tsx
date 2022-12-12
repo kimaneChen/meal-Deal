@@ -4,14 +4,16 @@ import { StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-
 import { Ionicons } from '@expo/vector-icons';
+import { Provider } from 'react-redux';
+
+import { store } from './store/redux/store';
 import CategoriesScreen from './screens/CategoriesScreen';
 import MealsOverview from './screens/MealsOverview';
 import type { RootStackParamList, DrawerParamList } from './types';
 import MealDetails from './screens/MealDetails';
 import FavoritesScreen from './screens/FavoriteMeal';
-import FavoritesContextProvider from './store/context/favorite-content';
+// import FavoritesContextProvider from './store/context/favorite-content';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 const Drawer = createDrawerNavigator<DrawerParamList>();
@@ -59,7 +61,8 @@ export default function App() {
   return (
     <>
       <StatusBar style="light" />
-      <FavoritesContextProvider>
+      <Provider store={store}>
+        {/* <FavoritesContextProvider> */}
         <NavigationContainer>
           <Stack.Navigator
             screenOptions={{
@@ -87,7 +90,8 @@ export default function App() {
             />
           </Stack.Navigator>
         </NavigationContainer>
-      </FavoritesContextProvider>
+        {/* </FavoritesContextProvider> */}
+      </Provider>
     </>
   );
 }
